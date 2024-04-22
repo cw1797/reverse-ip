@@ -41,7 +41,7 @@ jobs:
         push: true
         tags: cw1797/reverse-ip:${{ github.sha }}
 
-    - name: Update Kubernetes deployment
+    - name: Update image tag version
       run: |
         sed -i 's|tag: .*|tag: ${{ github.sha }}|' helm/values.yaml
         sed -i 's|cw1797/reverse-ip:.*|cw1797/reverse-ip:${{ github.sha }}|' helm/values.yaml

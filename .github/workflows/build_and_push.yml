@@ -47,6 +47,6 @@ jobs:
         sed -i 's|cw1797/reverse-ip:.*|cw1797/reverse-ip:${{ github.sha }}|' helm/values.yaml
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
-        git add argocd/deployment.yaml
+        git add helm/values.yaml
         git commit -m "Update image tag to ${{ github.sha }}"
         git push origin main

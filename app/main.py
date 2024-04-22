@@ -19,9 +19,9 @@ def get_reversed_public_ip():
         octets = public_ip.split('.')
         reversed_octets = octets[::-1]
         reversed_ip = '.'.join(reversed_octets)
-        return f"Reversed Public IP Address: {reversed_ip}"
+        return f"Reversed Public IP: {reversed_ip}"
     else:
-        return "Failed to retrieve public IP address"
+        return "Failed to retrieve public IP"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

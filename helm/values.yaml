@@ -3,7 +3,7 @@ replicaCount: 3
 image:
   repository: cw1797/reverse-ip
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: 7fc3170a160191768f2578094c122685dd7205ed
 
 service:
   type: ClusterIP

@@ -16,7 +16,7 @@ ingress:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
   hosts:
-    - host: reverseip.com
+    - host: k8s-demo-reversei-f2e59279c6-1197832907.eu-west-1.elb.amazonaws.com
       paths:
         - path: /
           pathType: ImplementationSpecific

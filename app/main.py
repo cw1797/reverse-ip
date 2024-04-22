@@ -1,16 +1,11 @@
-from flask import Flask
-import requests
+from flask import Flask, request
 
 app = Flask(__name__)
 
 def get_public_ip():
-    try:
-        response = requests.get('https://ifconfig.me/ip')
-        if response.status_code == 200:
-            return response.text.strip()
-    except Exception as e:
-        print("Error fetching Public IP:", e)
-    return None
+    if 'X-Forwarded-For' in request.headers:
+        return request.headers['X-Forwarded-For'].split(',')[0]
+    return request.remote_addr
 
 @app.route('/')
 def get_reversed_public_ip():

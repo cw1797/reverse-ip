@@ -9,7 +9,7 @@ def get_public_ip():
         if response.status_code == 200:
             return response.text.strip()
     except Exception as e:
-        print("Error fetching public IP:", e)
+        print("Error fetching Public IP:", e)
     return None
 
 @app.route('/')
@@ -21,7 +21,7 @@ def get_reversed_public_ip():
         reversed_ip = '.'.join(reversed_octets)
         return f"Reversed Public IP: {reversed_ip}"
     else:
-        return "Failed to retrieve public IP"
+        return "Failed to retrieve Public IP"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

@@ -1,0 +1,15 @@
+
+## Custom resource configuration
+crds:
+  install: true
+  keep: false
+
+## Argo Configs
+configs:
+  params:
+    server.insecure: true
+
+## Server
+server:
+  name: server
+  replicas: 1

@@ -1,0 +1,23 @@
+replicaCount: 3
+
+image:
+  repository: cw1797/reverse-ip
+  pullPolicy: IfNotPresent
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 5000
+
+ingress:
+  enabled: true
+  ingressClassName: "alb"
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+  hosts:
+    - host: reverseip.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
